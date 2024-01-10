@@ -28,74 +28,68 @@
           </el-carousel-item>
         </el-carousel>
       </div> -->
+      <span class="mt-5 ml-10 w-35 text-gray-600 inline-flex items-center font-size-5"
+        >特性参数:</span
+      >
+      <el-divider class="m-0" border-width="1px" border-color="#eeeeee"></el-divider>
       <div class="demo-input-suffix font-size-5">
-        <el-row :gutter="20">
-          <span class="ml-20 w-35 text-gray-600 inline-flex items-center">噪声系数</span>
+        <el-row :gutter="200">
+          <span class="ml-20 w-35 text-gray-600 inline-flex items-center">起始频率</span>
           <el-input v-model="input1" class="w-50 m-2" placeholder="input a value" />
-          <span class="w-35 text-gray-600 inline-flex items-center">dB</span>
-        </el-row>
-      </div>
-      <div class="demo-input-suffix font-size-5">
-        <el-row :gutter="20">
-          <span class="ml-20 w-35 text-gray-600 inline-flex items-center">增益</span>
-          <el-input v-model="input2" class="w-50 m-2" placeholder="input a value" />
-          <span class="w-35 text-gray-600 inline-flex items-center">dB</span>
-        </el-row>
-      </div>
-      <div class="demo-input-suffix font-size-5">
-        <el-row :gutter="20">
-          <span class="ml-20 w-35 text-gray-600 inline-flex items-center">带宽</span>
-          <el-input v-model="input3" class="w-50 m-2" placeholder="input a value" />
           <span class="w-35 text-gray-600 inline-flex items-center">GHz</span>
         </el-row>
       </div>
       <div class="demo-input-suffix font-size-5">
-        <el-row :gutter="20">
-          <span class="ml-20 w-35 text-gray-600 inline-flex items-center">阻抗匹配</span>
+        <el-row :gutter="200">
+          <span class="ml-20 w-35 text-gray-600 inline-flex items-center">截至频率</span>
+          <el-input v-model="input2" class="w-50 m-2" placeholder="input a value" />
+          <span class="w-35 text-gray-600 inline-flex items-center">GHz</span>
+        </el-row>
+      </div>
+      <div class="demo-input-suffix font-size-5">
+        <el-row :gutter="200">
+          <span class="ml-20 w-35 text-gray-600 inline-flex items-center">通带增益</span>
+          <el-input v-model="input3" class="w-50 m-2" placeholder="input a value" />
+          <span class="w-35 text-gray-600 inline-flex items-center">dB</span>
+        </el-row>
+      </div>
+      <div class="demo-input-suffix font-size-5">
+        <el-row :gutter="200">
+          <span class="ml-20 w-35 text-gray-600 inline-flex items-center">阻带衰减</span>
           <el-input v-model="input4" class="w-50 m-2" placeholder="input a value" />
+          <span class="w-35 text-gray-600 inline-flex items-center">dB</span>
+        </el-row>
+      </div>
+      <div class="demo-input-suffix font-size-5">
+        <el-row :gutter="200">
+          <span class="ml-20 w-35 text-gray-600 inline-flex items-center">群延迟</span>
+          <el-input v-model="input5" class="w-50 m-2" placeholder="input a value" />
+          <span class="w-35 text-gray-600 inline-flex items-center">deg</span>
+        </el-row>
+      </div>
+      <div class="demo-input-suffix font-size-5">
+        <el-row :gutter="200">
+          <span class="ml-20 w-35 text-gray-600 inline-flex items-center">阻抗匹配</span>
+          <el-input v-model="input6" class="w-50 m-2" placeholder="input a value" />
           <span class="w-35 text-gray-600 inline-flex items-center">Ω</span>
         </el-row>
       </div>
+      <span class="mt-5 ml-10 w-35 text-gray-600 inline-flex items-center font-size-5"
+        >拓扑结构选择:</span
+      >
+      <el-divider class="m-0" border-width="1px" border-color="#eeeeee"></el-divider>
       <div class="demo-input-suffix font-size-5">
-        <el-row :gutter="20">
-          <span class="ml-20 w-35 text-gray-600 inline-flex items-center">线性度</span>
-          <el-input v-model="input5" class="w-50 m-2" placeholder="input a value" />
-          <span class="w-35 text-gray-600 inline-flex items-center">dBm</span>
-        </el-row>
-      </div>
-      <div class="demo-input-suffix font-size-5">
-        <el-row :gutter="20">
-          <span class="ml-20 w-35 text-gray-600 inline-flex items-center">功耗</span>
-          <el-input v-model="input6" class="w-50 m-2" placeholder="input a value" />
-          <span class="w-35 text-gray-600 inline-flex items-center">mW</span>
-        </el-row>
-      </div>
-      <div class="demo-input-suffix font-size-5">
-        <el-row :gutter="20">
-          <span class="ml-20 w-35 text-gray-600 inline-flex items-center">稳定性</span>
-          <el-input v-model="input7" class="w-50 m-2" placeholder="input a value" />
+        <el-row :gutter="200">
+          <span class="ml-20 w-35 text-gray-600 inline-flex items-center">拓扑结构</span>
+          <el-select v-model="value" class="m-2" placeholder="Select">
+            <el-option
+              v-for="item in options"
+              :key="item.value"
+              :label="item.label"
+              :value="item.value"
+            />
+          </el-select>
           <span class="w-35 text-gray-600 inline-flex items-center"></span>
-        </el-row>
-      </div>
-      <div class="demo-input-suffix font-size-5">
-        <el-row :gutter="20">
-          <span class="ml-20 w-35 text-gray-600 inline-flex items-center">反向隔离</span>
-          <el-input v-model="input8" class="w-50 m-2" placeholder="input a value" />
-          <span class="w-35 text-gray-600 inline-flex items-center">dB</span>
-        </el-row>
-      </div>
-      <div class="demo-input-suffix font-size-5">
-        <el-row :gutter="20">
-          <span class="ml-20 w-35 text-gray-600 inline-flex items-center">输出功率</span>
-          <el-input v-model="input9" class="w-50 m-2" placeholder="input a value" />
-          <span class="w-35 text-gray-600 inline-flex items-center">dBm</span>
-        </el-row>
-      </div>
-      <div class="demo-input-suffix font-size-5">
-        <el-row :gutter="20">
-          <span class="ml-20 w-35 text-gray-600 inline-flex items-center">动态范围</span>
-          <el-input v-model="input10" class="w-50 m-2" placeholder="input a value" />
-          <span class="w-35 text-gray-600 inline-flex items-center">dB</span>
         </el-row>
       </div>
     </div>
@@ -112,21 +106,16 @@
         <el-table-column prop="notes" label="Notes" />
       </el-table>
       <el-divider class="m-0" border-width="3px" border-color="#eeeeee"></el-divider>
-      <div class="demo-image__error">
-        <div class="block">
-          <span class="demonstration">Custom</span>
-          <el-image>
-            <template #error>
-              <div class="image-slot">
-                <el-icon><icon-picture /></el-icon>
-              </div>
-            </template>
-          </el-image>
+      <div class="demo-image">
+        <div v-for="fit in fits" :key="fit" class="block">
+          <span class="demonstration w-auto">原理图结构</span>
+          <el-image style="width: 300px; height: 300px" :src="'image://' + PFPath" :fit="fit" />
         </div>
       </div>
     </div>
   </div>
 </template>
+
 <script lang="ts" setup>
 import { Picture as IconPicture } from '@element-plus/icons-vue'
 import { Calendar, Search } from '@element-plus/icons-vue'
@@ -140,6 +129,21 @@ const input7 = ref('')
 const input8 = ref('')
 const input9 = ref('')
 const input10 = ref('')
+
+const difinput = computed(() => {
+  const num1 = parseInt(input1.value, 10)
+  const num2 = parseInt(input2.value, 10)
+
+  // 如果input1或input2不是有效的数字，返回NaN
+  if (isNaN(num1) || isNaN(num2)) {
+    return NaN
+  }
+
+  return num2 - num1
+})
+
+const fits = ['cover']
+const url = 'https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg'
 
 interface Tree {
   label: string
@@ -208,6 +212,43 @@ const data: Tree[] = [
   }
 ]
 
+const value = ref('')
+
+const options = [
+  {
+    value: 'LPF1',
+    label: '低通滤波器拓扑结构1'
+  },
+  {
+    value: 'LPF2',
+    label: '低通滤波器拓扑结构2'
+  },
+  {
+    value: 'LPF3',
+    label: '高通滤波器拓扑结构1'
+  },
+  {
+    value: 'LPF4',
+    label: '高通滤波器拓扑结构2'
+  },
+  {
+    value: 'HPF1',
+    label: '带通滤波器拓扑结构1'
+  },
+  {
+    value: 'HPF2',
+    label: '带通滤波器拓扑结构2'
+  },
+  {
+    value: 'HPF3',
+    label: '全通滤波器拓扑结构1'
+  },
+  {
+    value: 'HPF4',
+    label: '全通滤波器拓扑结构2'
+  }
+]
+
 const defaultProps = {
   children: 'children',
   label: 'label'
@@ -215,56 +256,53 @@ const defaultProps = {
 
 const tableData = [
   {
-    Name: '噪声系数',
-    value: '2',
-    notes: 'dB'
-  },
-  {
-    Name: '增益',
-    value: '15',
-    notes: 'dB'
-  },
-  {
-    Name: '带宽',
-    value: '10',
+    Name: '起始频率',
+    value: input1,
     notes: 'GHz'
   },
   {
+    Name: '截止频率',
+    value: input2,
+    notes: 'GHz'
+  },
+  {
+    Name: '带宽',
+    value: difinput,
+    notes: 'GHz'
+  },
+  {
+    Name: '通带增益',
+    value: input3,
+    notes: 'dB'
+  },
+  {
+    Name: '阻带抑制',
+    value: input4,
+    notes: 'dB'
+  },
+  {
+    Name: '群延迟',
+    value: input5,
+    notes: 'deg'
+  },
+  {
     Name: '阻抗匹配',
-    value: '50',
+    value: input6,
     notes: 'Ω（欧姆）'
   },
   {
-    Name: '线性度',
-    value: '10',
-    notes: 'dBm'
-  },
-  {
-    Name: '功耗',
-    value: '30',
-    notes: 'mW'
-  },
-  {
-    Name: '稳定性',
-    value: '1',
-    notes: '\\'
-  },
-  {
-    Name: '反向隔离',
-    value: '30',
-    notes: 'dB'
-  },
-  {
-    Name: '输出功率',
-    value: '50',
-    notes: 'dBm'
-  },
-  {
-    Name: '动态范围',
-    value: '50',
-    notes: 'dB'
+    Name: '拓扑结构',
+    value: value,
+    notes: ''
   }
 ]
+
+const PFPath = computed(() => {
+  return `D:\\GitWork\\electron_work\\AI_flow_electron\\resources\\${value.value}.png`.replace(
+    /\\\\/g,
+    '/'
+  )
+})
 </script>
 
 <style scoped>
@@ -322,6 +360,24 @@ const tableData = [
 }
 .demo-image__error .image-slot .el-icon {
   font-size: 30px;
+}
+.demo-image .block {
+  padding: 30px 0;
+  text-align: center;
+  border-right: solid 1px var(--el-border-color);
+  display: inline-block;
+  width: 20%;
+  box-sizing: border-box;
+  vertical-align: top;
+}
+.demo-image .block:last-child {
+  border-right: none;
+}
+.demo-image .demonstration {
+  display: block;
+  color: var(--el-text-color-secondary);
+  font-size: 14px;
+  margin-bottom: 20px;
 }
 </style>
 

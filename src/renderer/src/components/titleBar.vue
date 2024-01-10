@@ -70,7 +70,7 @@ const imagePath =
     /\\\\/g,
     '/'
   )
-const active = ref(3)
+const active = ref(1)
 const isNotMac = ref(true)
 const isUseSysTitle = ref(false)
 const max = ref(false)
