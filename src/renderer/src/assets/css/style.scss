@@ -1,0 +1,92 @@
+@import './transition.scss';
+
+html,
+body,
+#app {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  user-select: none;
+  -moz-osx-font-smoothing: grayscale; // 设置字体在mac系统上的平滑渲染效果
+  -webkit-font-smoothing: antialiased; // 设置字体在mac系统上的平滑渲染效果
+  text-rendering: optimizeLegibility; // 优化文本渲染效果，提高可读性
+  font-family:
+    Helvetica Neue,
+    Helvetica,
+    PingFang SC,
+    Hiragino Sans GB,
+    Microsoft YaHei,
+    Arial,
+    sans-serif; // 字体优先级顺序
+  margin: 0; // 消除body元素默认外边距
+  padding: 0; // 消除body元素默认内边距
+}
+
+html {
+  box-sizing: border-box; // 计算元素宽度高度时，包含边框和内边距尺寸
+
+  // 定义滚动条样式
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    background-color: none;
+  }
+
+  // 定义滚动条轨道样式
+  ::-webkit-scrollbar-track {
+    background-color: none;
+  }
+
+  // 定义滚动条滑块样式
+  ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #ada8a8;
+  }
+}
+
+// 全局盒模型计算方式-继承
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+// 移除div焦点样式（元素周围虚线框）
+div:focus {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+a,
+a:focus,
+a:hover {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+
+.clearfix {
+  &:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: ' ';
+    clear: both;
+    height: 0;
+  }
+}
+
+//main-container全局样式
+.app-main {
+  min-height: 100%;
+}
+
+.app-container {
+  padding: 20px;
+}
