@@ -12,10 +12,10 @@
     <div class="w-60%" h-940px>
       <el-text class="mx-1 font-size-5 p-5">设计尺寸参数</el-text>
       <el-divider class="m-0" border-width="1px" border-color="#eeeeee"></el-divider>
-      <el-table :data="tableData" height="250" style="width: 100%">
-        <el-table-column prop="date" label="Date" width="180" />
-        <el-table-column prop="name" label="Name" width="180" />
-        <el-table-column prop="address" label="Address" />
+      <el-table :data="tableData" style="width: 100%; height: 50%;">
+        <el-table-column prop="Name" label="变量名称" width="180" />
+        <el-table-column prop="Value" label="数值" width="180" />
+        <el-table-column prop="Unit" label="单位" />
       </el-table>
     </div>
     <el-divider
@@ -124,40 +124,25 @@ const defaultProps = {
 
 const tableData = [
   {
-    date: '2016-05-03',
-    name: 'Tom',
-    address: 'No. 189, Grove St, Los Angeles'
+    Name: '2016-05-03',
+    Value: 'Tom',
+    Unit: 'No. 189, Grove St, Los Angeles'
   },
   {
-    date: '2016-05-02',
-    name: 'Tom',
-    address: 'No. 189, Grove St, Los Angeles'
+    Name: '2016-05-02',
+    Value: 'Tom',
+    Unit: 'No. 189, Grove St, Los Angeles'
   },
   {
-    date: '2016-05-04',
-    name: 'Tom',
-    address: 'No. 189, Grove St, Los Angeles'
+    Name: '2016-05-04',
+    Value: 'Tom',
+    Unit: 'No. 189, Grove St, Los Angeles'
   },
   {
-    date: '2016-05-01',
-    name: 'Tom',
-    address: 'No. 189, Grove St, Los Angeles'
+    Name: '2016-05-01',
+    Value: 'Tom',
+    Unit: 'No. 189, Grove St, Los Angeles'
   },
-  {
-    date: '2016-05-08',
-    name: 'Tom',
-    address: 'No. 189, Grove St, Los Angeles'
-  },
-  {
-    date: '2016-05-06',
-    name: 'Tom',
-    address: 'No. 189, Grove St, Los Angeles'
-  },
-  {
-    date: '2016-05-07',
-    name: 'Tom',
-    address: 'No. 189, Grove St, Los Angeles'
-  }
 ]
 </script>
 
