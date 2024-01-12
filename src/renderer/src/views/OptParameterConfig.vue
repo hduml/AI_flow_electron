@@ -1,0 +1,243 @@
+<template w-full h-50px f-c-c>
+  <div h-auto f-c-c bg-white>
+    <div class="w-20%" h-940px>
+      <el-tree :data="data" :props="defaultProps" @node-click="handleNodeClick" font-size-5 />
+    </div>
+    <el-divider
+      direction="vertical"
+      class="m-0 h-940px"
+      border-width="3px"
+      border-color="#eeeeee"
+    ></el-divider>
+    <div class="w-60%" h-940px>
+      <el-text class="mx-1 font-size-5 p-5">设计尺寸参数</el-text>
+      <el-divider class="m-0" border-width="1px" border-color="#eeeeee"></el-divider>
+      <el-table :data="tableData" height="250" style="width: 100%">
+        <el-table-column prop="date" label="Date" width="180" />
+        <el-table-column prop="name" label="Name" width="180" />
+        <el-table-column prop="address" label="Address" />
+      </el-table>
+    </div>
+    <el-divider
+      direction="vertical"
+      class="m-0 h-940px"
+      border-width="3px"
+      border-color="#eeeeee"
+    ></el-divider>
+    <div class="w-20%" h-940px>
+      <el-table :data="tableData" border style="width: 100% high: 60%">
+        <el-table-column prop="Name" label="Name" />
+        <el-table-column prop="value" label="Value" />
+        <el-table-column prop="notes" label="Notes" />
+      </el-table>
+      <el-divider class="m-0" border-width="3px" border-color="#eeeeee"></el-divider>
+      <div class="demo-image__error">
+        <div class="block">
+          <span class="demonstration">Custom</span>
+          <el-image>
+            <template #error>
+              <div class="image-slot">
+                <el-icon><icon-picture /></el-icon>
+              </div>
+            </template>
+          </el-image>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script lang="ts" setup>
+import { Picture as IconPicture } from '@element-plus/icons-vue'
+
+interface Tree {
+  label: string
+  children?: Tree[]
+}
+
+const handleNodeClick = (data: Tree) => {
+  console.log(data)
+}
+
+const data: Tree[] = [
+  {
+    label: '工程项目1',
+    children: [
+      {
+        label: '低噪声放大器自动设计',
+        children: [
+          {
+            label: '参数设置'
+          }
+        ]
+      }
+    ]
+  },
+  {
+    label: '工程项目2',
+    children: [
+      {
+        label: '低噪声放大器自动设计',
+        children: [
+          {
+            label: '参数设置'
+          }
+        ]
+      },
+      {
+        label: '滤波器自动设计',
+        children: [
+          {
+            label: '参数设置'
+          }
+        ]
+      }
+    ]
+  },
+  {
+    label: '工程项目3',
+    children: [
+      {
+        label: '电阻自动设计',
+        children: [
+          {
+            label: '参数设置'
+          }
+        ]
+      },
+      {
+        label: '电感自动设计',
+        children: [
+          {
+            label: '参数设置'
+          }
+        ]
+      }
+    ]
+  }
+]
+
+const defaultProps = {
+  children: 'children',
+  label: 'label'
+}
+
+const tableData = [
+  {
+    date: '2016-05-03',
+    name: 'Tom',
+    address: 'No. 189, Grove St, Los Angeles'
+  },
+  {
+    date: '2016-05-02',
+    name: 'Tom',
+    address: 'No. 189, Grove St, Los Angeles'
+  },
+  {
+    date: '2016-05-04',
+    name: 'Tom',
+    address: 'No. 189, Grove St, Los Angeles'
+  },
+  {
+    date: '2016-05-01',
+    name: 'Tom',
+    address: 'No. 189, Grove St, Los Angeles'
+  },
+  {
+    date: '2016-05-08',
+    name: 'Tom',
+    address: 'No. 189, Grove St, Los Angeles'
+  },
+  {
+    date: '2016-05-06',
+    name: 'Tom',
+    address: 'No. 189, Grove St, Los Angeles'
+  },
+  {
+    date: '2016-05-07',
+    name: 'Tom',
+    address: 'No. 189, Grove St, Los Angeles'
+  }
+]
+</script>
+
+<style scoped>
+.demonstration {
+  color: var(--el-text-color-secondary);
+}
+
+.el-carousel__item h3 {
+  color: #475669;
+  opacity: 0.75;
+  line-height: 150px;
+  margin: 0;
+  text-align: center;
+}
+
+.el-carousel__item:nth-child(2n) {
+  background-color: #99a9bf;
+}
+
+.el-carousel__item:nth-child(2n + 1) {
+  background-color: #d3dce6;
+}
+.demo-image__error .block {
+  padding: 30px 0;
+  text-align: center;
+  border-right: solid 1px var(--el-border-color);
+  display: inline-block;
+  width: 49%;
+  box-sizing: border-box;
+  vertical-align: top;
+}
+.demo-image__error .demonstration {
+  display: block;
+  color: var(--el-text-color-secondary);
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+.demo-image__error .el-image {
+  padding: 0 5px;
+  max-width: 3000px;
+  max-height: 2000px;
+  width: 100%;
+  height: 200px;
+}
+
+.demo-image__error .image-slot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: var(--el-fill-color-light);
+  color: var(--el-text-color-secondary);
+  font-size: 30px;
+}
+.demo-image__error .image-slot .el-icon {
+  font-size: 30px;
+}
+</style>
+
+<style lang="scss">
+.el-row {
+  margin-bottom: 20px;
+}
+.el-row:last-child {
+  margin-bottom: 0;
+}
+.el-col {
+  border-radius: 4px;
+}
+
+.grid-content {
+  border-radius: 4px;
+  min-height: 36px;
+}
+
+.demo-input-suffix {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+</style>

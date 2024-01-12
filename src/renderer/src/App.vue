@@ -11,9 +11,12 @@
 
 <template>
   <TitleBar></TitleBar>
-  <ParameterConfig></ParameterConfig>
+  <OptParameterConfig></OptParameterConfig>
+  <!-- <ParameterConfig></ParameterConfig> -->
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import OptParameterConfig from './views/OptParameterConfig.vue';
+</script>
 
 <style></style>
