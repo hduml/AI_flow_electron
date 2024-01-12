@@ -26,6 +26,7 @@ declare module 'vue' {
     ElText: typeof import('element-plus/es')['ElText']
     ElTree: typeof import('element-plus/es')['ElTree']
     ElUpload: typeof import('element-plus/es')['ElUpload']
+    IconElOkCircle: typeof import('~icons/el/ok-circle')['default']
     IconIconoirPipe3d: typeof import('~icons/iconoir/pipe3d')['default']
     IconMaterialSymbolsCloseRounded: typeof import('~icons/material-symbols/close-rounded')['default']
     IconMaterialSymbolsM: typeof import('~icons/material-symbols/m')['default']
@@ -37,6 +38,7 @@ declare module 'vue' {
     ParameterConfig: typeof import('./../src/renderer/src/components/ParameterConfig.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    StepBar: typeof import('./../src/renderer/src/components/stepBar.vue')['default']
     TitleBar: typeof import('./../src/renderer/src/components/titleBar.vue')['default']
   }
 }

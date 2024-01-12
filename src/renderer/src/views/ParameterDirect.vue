@@ -1,105 +1,86 @@
 <template>
-  <div :style="{ height: 'calc(100% - 50px)' }" f-c-c bg-white>
-    <div class="w-20%" h-940px>
+  <div :style="{ height: 'calc(100% - 50px)' }" flex bg-white>
+    <div p-2 class="w-20%">
       <el-tree :data="data" :props="defaultProps" @node-click="handleNodeClick" font-size-5 />
     </div>
     <el-divider
       direction="vertical"
-      class="m-0 h-940px"
+      h-full
+      class="m-0"
       border-width="3px"
       border-color="#eeeeee"
     ></el-divider>
-    <div class="w-60%" h-940px>
-      <!-- <el-text class="mx-1 font-size-5 p-5">设计结果输出</el-text>
-      <el-divider class="m-0" border-width="1px" border-color="#eeeeee"></el-divider>
-      <div class="block text-center ml-10 mr-10">
-        <span class="demonstration font-size-5">原理图设计结果</span>
-        <el-carousel height="450px">
-          <el-carousel-item v-for="item in 4" :key="item">
-            <h3 class="small justify-center" text="2xl">{{ item }}</h3>
-          </el-carousel-item>
-        </el-carousel>
-      </div>
-      <div class="block text-center ml-10 mr-10" m="t-4">
-        <span class="demonstration font-size-5">版图设计结果</span>
-        <el-carousel trigger="click" height="350px">
-          <el-carousel-item v-for="item in 4" :key="item">
-            <h3 class="small justify-center" text="2xl">{{ item }}</h3>
-          </el-carousel-item>
-        </el-carousel>
-      </div> -->
+    <div class="w-60%">
       <span class="mt-5 ml-10 w-35 text-gray-600 inline-flex items-center font-size-5"
-        >特性参数:</span
+        >功能单元:</span
+      >
+      <el-divider m-0 border-width-1px border-color="#eeeeee"></el-divider>
+      <div flex align-start>
+        <div f-c-c flex-col m-10 b-1 b-solid>
+          <el-image p-1></el-image>
+          <span p-1>PA</span>
+        </div>
+        <div f-c-c flex-col m-10 b-1 b-solid>
+          <el-image p-1></el-image>
+          <span p-1>PA</span>
+        </div>
+        <div f-c-c flex-col m-10 b-1 b-solid>
+          <el-image p-1></el-image>
+          <span p-1>PA</span>
+        </div>
+        <div f-c-c flex-col m-10 b-1 b-solid>
+          <el-image p-1></el-image>
+          <span p-1>PA</span>
+        </div>
+      </div>
+
+      <span class="mt-5 ml-10 w-35 text-gray-600 inline-flex items-center font-size-5"
+        >基本结构:</span
       >
       <el-divider class="m-0" border-width="1px" border-color="#eeeeee"></el-divider>
-      <div class="demo-input-suffix font-size-5">
-        <el-row :gutter="200">
-          <span class="ml-20 w-35 text-gray-600 inline-flex items-center">起始频率</span>
-          <el-input v-model="input1" class="w-50 m-2" placeholder="input a value" />
-          <span class="w-35 text-gray-600 inline-flex items-center">GHz</span>
-        </el-row>
+      <div flex align-start>
+        <div f-c-c flex-col m-10 b-1 b-solid>
+          <el-image p-1></el-image>
+          <span p-1>电容</span>
+        </div>
+        <div f-c-c flex-col m-10 b-1 b-solid>
+          <el-image p-1></el-image>
+          <span p-1>电容</span>
+        </div>
+        <div f-c-c flex-col m-10 b-1 b-solid>
+          <el-image p-1></el-image>
+          <span p-1>电容</span>
+        </div>
+        <div f-c-c flex-col m-10 b-1 b-solid>
+          <el-image p-1></el-image>
+          <span p-1>电容</span>
+        </div>
+        <div f-c-c flex-col m-10 b-1 b-solid>
+          <el-image p-1></el-image>
+          <span p-1>电容</span>
+        </div>
       </div>
-      <div class="demo-input-suffix font-size-5">
-        <el-row :gutter="200">
-          <span class="ml-20 w-35 text-gray-600 inline-flex items-center">截至频率</span>
-          <el-input v-model="input2" class="w-50 m-2" placeholder="input a value" />
-          <span class="w-35 text-gray-600 inline-flex items-center">GHz</span>
-        </el-row>
-      </div>
-      <div class="demo-input-suffix font-size-5">
-        <el-row :gutter="200">
-          <span class="ml-20 w-35 text-gray-600 inline-flex items-center">通带增益</span>
-          <el-input v-model="input3" class="w-50 m-2" placeholder="input a value" />
-          <span class="w-35 text-gray-600 inline-flex items-center">dB</span>
-        </el-row>
-      </div>
-      <div class="demo-input-suffix font-size-5">
-        <el-row :gutter="200">
-          <span class="ml-20 w-35 text-gray-600 inline-flex items-center">阻带衰减</span>
-          <el-input v-model="input4" class="w-50 m-2" placeholder="input a value" />
-          <span class="w-35 text-gray-600 inline-flex items-center">dB</span>
-        </el-row>
-      </div>
-      <div class="demo-input-suffix font-size-5">
-        <el-row :gutter="200">
-          <span class="ml-20 w-35 text-gray-600 inline-flex items-center">群延迟</span>
-          <el-input v-model="input5" class="w-50 m-2" placeholder="input a value" />
-          <span class="w-35 text-gray-600 inline-flex items-center">deg</span>
-        </el-row>
-      </div>
-      <div class="demo-input-suffix font-size-5">
-        <el-row :gutter="200">
-          <span class="ml-20 w-35 text-gray-600 inline-flex items-center">阻抗匹配</span>
-          <el-input v-model="input6" class="w-50 m-2" placeholder="input a value" />
-          <span class="w-35 text-gray-600 inline-flex items-center">Ω</span>
-        </el-row>
-      </div>
-      <span class="mt-5 ml-10 w-35 text-gray-600 inline-flex items-center font-size-5"
-        >拓扑结构选择:</span
-      >
+      <div class="demo-input-suffix font-size-5"></div>
+      <span class="mt-5 ml-10 w-35 text-gray-600 inline-flex items-center font-size-5">其他:</span>
       <el-divider class="m-0" border-width="1px" border-color="#eeeeee"></el-divider>
-      <div class="demo-input-suffix font-size-5">
-        <el-row :gutter="200">
-          <span class="ml-20 w-35 text-gray-600 inline-flex items-center">拓扑结构</span>
-          <el-select v-model="value" class="m-2" placeholder="Select">
-            <el-option
-              v-for="item in options"
-              :key="item.value"
-              :label="item.label"
-              :value="item.value"
-            />
-          </el-select>
-          <span class="w-35 text-gray-600 inline-flex items-center"></span>
-        </el-row>
-      </div>
+      <el-row :gutter="1">
+        <div>
+          <div f-c-c flex-col m-10 b-1 b-solid>
+            <el-image p-1></el-image>
+            <span p-1>x'x'x'x'x</span>
+          </div>
+        </div>
+      </el-row>
+      <div class="demo-input-suffix font-size-5"></div>
     </div>
     <el-divider
       direction="vertical"
-      class="m-0 h-940px"
+      h-full
+      m-0
       border-width="3px"
       border-color="#eeeeee"
     ></el-divider>
-    <div class="w-20%" h-940px>
+    <div class="w-20%">
       <el-table :data="tableData" border style="width: 100% high: 60%">
         <el-table-column prop="Name" label="Name" />
         <el-table-column prop="value" label="Value" />
@@ -119,6 +100,7 @@
 <script lang="ts" setup>
 import { Picture as IconPicture } from '@element-plus/icons-vue'
 import { Calendar, Search } from '@element-plus/icons-vue'
+import { ElMessage, ElMessageBox } from 'element-plus'
 const input1 = ref('')
 const input2 = ref('')
 const input3 = ref('')
@@ -142,11 +124,32 @@ const difinput = computed(() => {
   return num2 - num1
 })
 
+// const open = () => {
+//   ElMessageBox.prompt('Please create your programme', '新建工程', {
+//     confirmButtonText: 'OK',
+//     cancelButtonText: 'Cancel',
+//     inputPattern:
+//       /[\w!#$%&'*+/=?^_`{|}~-]+(?:\.[\w!#$%&'*+/=?^_`{|}~-]+)*@(?:[\w](?:[\w-]*[\w])?\.)+[\w](?:[\w-]*[\w])?/,
+//     inputErrorMessage: 'Invalid Name',
+//   })
+//     .then(({ value }) => {
+//       ElMessage({
+//         type: 'success',
+//         message: `Your programme is:${value}`,
+//       })
+//     })
+//     .catch(() => {
+//       ElMessage({
+//         type: 'info',
+//         message: 'Input canceled',
+//       })
+//     })
+// }
+
 const fits = ['cover']
 const url = 'https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg'
 
 interface Tree {
-
   label: string
   children?: Tree[]
 }
@@ -299,7 +302,7 @@ const tableData = [
 ]
 
 const PFPath = computed(() => {
-  return `D:\\GitWork\\electron_work\\AI_flow_electron\\resources\\${value.value}.png`.replace(
+  return `D:\\program\\workspace\\my_github\\AI_flow_electron\\resources\\${value.value}.png`.replace(
     /\\\\/g,
     '/'
   )
@@ -403,4 +406,10 @@ const PFPath = computed(() => {
   justify-content: center;
   align-items: center;
 }
+
+// .custom-button{
+//   position:relative;
+//   left: 20px;
+//   top:10px;
+// }
 </style>

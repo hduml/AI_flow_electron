@@ -1,47 +1,44 @@
-<template w-full h-50px f-c-c>
-  <div h-auto f-c-c bg-white>
-    <div class="w-20%" h-940px>
+<template>
+  <div flex bg-white :style="{ height: 'calc(100% - 50px)' }">
+    <div p-2 class="w-20%">
       <el-tree :data="data" :props="defaultProps" @node-click="handleNodeClick" font-size-5 />
     </div>
     <el-divider
       direction="vertical"
-      class="m-0 h-940px"
+      m-0
+      h-full
       border-width="3px"
       border-color="#eeeeee"
     ></el-divider>
-    <div class="w-60%" h-940px>
-      <el-text class="mx-1 font-size-5 p-5">设计尺寸参数</el-text>
+    <div p-2 class="w-60%">
+      <h3 mx-2 font-size-5>设计尺寸参数</h3>
+      <!-- <el-text class="mx-1 font-size-5 p-5">设计尺寸参数</el-text> -->
       <el-divider class="m-0" border-width="1px" border-color="#eeeeee"></el-divider>
-      <el-table :data="tableData" style="width: 100%; height: 50%;">
+      <el-table :data="tableData" style="width: 100%; height: 80%">
         <el-table-column prop="Name" label="变量名称" width="180" />
         <el-table-column prop="Value" label="数值" width="180" />
         <el-table-column prop="Unit" label="单位" />
       </el-table>
+      <div f-c-c mt-10><el-button size="large">导出GDSII版图</el-button></div>
     </div>
     <el-divider
       direction="vertical"
-      class="m-0 h-940px"
+      m-0
+      h-full
       border-width="3px"
       border-color="#eeeeee"
     ></el-divider>
-    <div class="w-20%" h-940px>
-      <el-table :data="tableData" border style="width: 100% high: 60%">
+    <stepBar></stepBar>
+    <div class="w-20%">
+      <el-table :data="tableData" border style="width: 100%; height: 60%">
         <el-table-column prop="Name" label="Name" />
         <el-table-column prop="value" label="Value" />
         <el-table-column prop="notes" label="Notes" />
       </el-table>
       <el-divider class="m-0" border-width="3px" border-color="#eeeeee"></el-divider>
-      <div class="demo-image__error">
-        <div class="block">
-          <span class="demonstration">Custom</span>
-          <el-image>
-            <template #error>
-              <div class="image-slot">
-                <el-icon><icon-picture /></el-icon>
-              </div>
-            </template>
-          </el-image>
-        </div>
+      <div flex flex-col>
+        <span f-c-c p-1>xxxxx原理图</span>
+        <el-image p-1 :src="imagePath"></el-image>
       </div>
     </div>
   </div>
@@ -49,6 +46,7 @@
 
 <script lang="ts" setup>
 import { Picture as IconPicture } from '@element-plus/icons-vue'
+import imagePath from '@renderer/assets/HPF1.png'
 
 interface Tree {
   label: string
@@ -143,6 +141,26 @@ const tableData = [
     Value: 'Tom',
     Unit: 'No. 189, Grove St, Los Angeles'
   },
+  {
+    Name: '2016-05-04',
+    Value: 'Tom',
+    Unit: 'No. 189, Grove St, Los Angeles'
+  },
+  {
+    Name: '2016-05-01',
+    Value: 'Tom',
+    Unit: 'No. 189, Grove St, Los Angeles'
+  },
+  {
+    Name: '2016-05-04',
+    Value: 'Tom',
+    Unit: 'No. 189, Grove St, Los Angeles'
+  },
+  {
+    Name: '2016-05-01',
+    Value: 'Tom',
+    Unit: 'No. 189, Grove St, Los Angeles'
+  }
 ]
 </script>
 

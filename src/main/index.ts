@@ -26,6 +26,7 @@ function createWindow(): void {
     width: 900,
     height: 670,
     show: false,
+    frame: false,
     autoHideMenuBar: true,
     ...(process.platform === 'linux' ? { icon } : {}),
     webPreferences: {
@@ -33,7 +34,7 @@ function createWindow(): void {
       sandbox: false
     }
   })
-
+  mainWindow.setMinimumSize(1300, 900)
   mainWindow.on('ready-to-show', () => {
     mainWindow.show()
     if (process.env.NODE_ENV === 'development') {
@@ -62,7 +63,7 @@ function createWindow(): void {
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 app.whenReady().then(() => {
-  // optimizer.registerFramelessWindowIpc() // 注册无边框窗口的IPC事件
+  optimizer.registerFramelessWindowIpc() // 注册无边框窗口的IPC事件
   protocol.handle('image', handleImageProtocol) // 处理'image'协议资源
   // setIPC.MainFunc(mainWindow) // 注册自定义IPC事件
 
