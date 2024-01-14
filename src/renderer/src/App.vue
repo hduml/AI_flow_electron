@@ -11,8 +11,8 @@
 
 <template>
   <TitleBar></TitleBar>
-  <ParameterDirect></ParameterDirect>
-  <!-- <OptParameterConfig></OptParameterConfig> -->
+  <!-- <ParameterDirect></ParameterDirect> -->
+  <OptParameterConfig></OptParameterConfig>
   <!-- <ParameterConfig></ParameterConfig> -->
 </template>
 

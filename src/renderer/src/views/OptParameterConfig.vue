@@ -28,9 +28,8 @@
       border-width="3px"
       border-color="#eeeeee"
     ></el-divider>
-    <stepBar></stepBar>
     <div class="w-20%">
-      <el-table :data="tableData" border style="width: 100%; height: 60%">
+      <el-table :data="tableData1" border style="width: 100%; height: 60%">
         <el-table-column prop="Name" label="Name" />
         <el-table-column prop="value" label="Value" />
         <el-table-column prop="notes" label="Notes" />
@@ -56,6 +55,49 @@ interface Tree {
 const handleNodeClick = (data: Tree) => {
   console.log(data)
 }
+
+const tableData1 = [
+  {
+    Name: '起始频率',
+    value: 10,
+    notes: 'GHz'
+  },
+  {
+    Name: '截止频率',
+    value: 20,
+    notes: 'GHz'
+  },
+  {
+    Name: '带宽',
+    value: 10,
+    notes: 'GHz'
+  },
+  {
+    Name: '通带增益',
+    value: -1,
+    notes: 'dB'
+  },
+  {
+    Name: '阻带抑制',
+    value: -20,
+    notes: 'dB'
+  },
+  {
+    Name: '群延迟',
+    value: 1,
+    notes: 'deg'
+  },
+  {
+    Name: '阻抗匹配',
+    value: 50,
+    notes: 'Ω（欧姆）'
+  },
+  {
+    Name: '拓扑结构',
+    value: "LPF1",
+    notes: ''
+  }
+]
 
 const data: Tree[] = [
   {
@@ -122,44 +164,44 @@ const defaultProps = {
 
 const tableData = [
   {
-    Name: '2016-05-03',
-    Value: 'Tom',
-    Unit: 'No. 189, Grove St, Los Angeles'
+    Name: 'L',
+    Value: '10',
+    Unit: 'um'
   },
   {
-    Name: '2016-05-02',
-    Value: 'Tom',
-    Unit: 'No. 189, Grove St, Los Angeles'
+    Name: 'L1',
+    Value: '20',
+    Unit: 'um'
   },
   {
-    Name: '2016-05-04',
-    Value: 'Tom',
-    Unit: 'No. 189, Grove St, Los Angeles'
+    Name: 'L2',
+    Value: '15',
+    Unit: 'um'
   },
   {
-    Name: '2016-05-01',
-    Value: 'Tom',
-    Unit: 'No. 189, Grove St, Los Angeles'
+    Name: 'L3',
+    Value: '20',
+    Unit: 'um'
   },
   {
-    Name: '2016-05-04',
-    Value: 'Tom',
-    Unit: 'No. 189, Grove St, Los Angeles'
+    Name: 'W1',
+    Value: '10',
+    Unit: 'um'
   },
   {
-    Name: '2016-05-01',
-    Value: 'Tom',
-    Unit: 'No. 189, Grove St, Los Angeles'
+    Name: 'W2',
+    Value: '10',
+    Unit: 'um'
   },
   {
-    Name: '2016-05-04',
-    Value: 'Tom',
-    Unit: 'No. 189, Grove St, Los Angeles'
+    Name: 'W3',
+    Value: '10',
+    Unit: 'um'
   },
   {
-    Name: '2016-05-01',
-    Value: 'Tom',
-    Unit: 'No. 189, Grove St, Los Angeles'
+    Name: 'S',
+    Value: '10',
+    Unit: 'um'
   }
 ]
 </script>
