@@ -11,13 +11,16 @@
 
 <template>
   <TitleBar></TitleBar>
+  <!-- <ParameterCreateWindow></ParameterCreateWindow> -->
   <ParameterDirect></ParameterDirect>
+  <!-- <ParameterCreateWindow></ParameterCreateWindow> -->
   <!-- <OptParameterConfig></OptParameterConfig> -->
   <!-- <ParameterConfig></ParameterConfig> -->
 </template>
 
 <script setup lang="ts">
 import OptParameterConfig from './views/OptParameterConfig.vue'
+import ParameterCreateWindow from './views/ParameterCreateWindow.vue';
 import ParameterDirect from './views/ParameterDirect.vue';
 </script>
 

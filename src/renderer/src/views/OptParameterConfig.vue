@@ -1,5 +1,6 @@
 <template>
-  <div flex bg-white :style="{ height: 'calc(100% - 50px)' }">
+  <div :style="{ height: 'calc(100% - 50px)' }" flex bg-white>
+  <!-- <div flex bg-white :style="{ height: 'calc(100% - 50px)' }"> -->
     <div p-2 class="w-20%">
       <el-tree :data="data" :props="defaultProps" @node-click="handleNodeClick" font-size-5 />
     </div>
@@ -28,17 +29,17 @@
       border-width="3px"
       border-color="#eeeeee"
     ></el-divider>
-    <stepBar></stepBar>
     <div class="w-20%">
-      <el-table :data="tableData" border style="width: 100%; height: 60%">
+      <el-table :data="tableData1" border style="width: 100%; height: 60%">
         <el-table-column prop="Name" label="Name" />
         <el-table-column prop="value" label="Value" />
         <el-table-column prop="notes" label="Notes" />
       </el-table>
       <el-divider class="m-0" border-width="3px" border-color="#eeeeee"></el-divider>
       <div flex flex-col>
-        <span f-c-c p-1>xxxxx原理图</span>
-        <el-image p-1 :src="imagePath"></el-image>
+        <span f-c-c p-1>滤波器原理图</span>
+        <!-- <el-image p-1 :src="imagePath"></el-image> -->
+        <img src="@renderer/assets/layout.png" alt="滤波器" />
       </div>
     </div>
   </div>
@@ -56,6 +57,49 @@ interface Tree {
 const handleNodeClick = (data: Tree) => {
   console.log(data)
 }
+
+const tableData1 = [
+  {
+    Name: '起始频率',
+    value: 10,
+    notes: 'GHz'
+  },
+  {
+    Name: '截止频率',
+    value: 20,
+    notes: 'GHz'
+  },
+  {
+    Name: '带宽',
+    value: 10,
+    notes: 'GHz'
+  },
+  {
+    Name: '通带增益',
+    value: -1,
+    notes: 'dB'
+  },
+  {
+    Name: '阻带抑制',
+    value: -20,
+    notes: 'dB'
+  },
+  {
+    Name: '群延迟',
+    value: 1,
+    notes: 'deg'
+  },
+  {
+    Name: '阻抗匹配',
+    value: 50,
+    notes: 'Ω（欧姆）'
+  },
+  {
+    Name: '拓扑结构',
+    value: "LPF1",
+    notes: ''
+  }
+]
 
 const data: Tree[] = [
   {
@@ -122,46 +166,110 @@ const defaultProps = {
 
 const tableData = [
   {
-    Name: '2016-05-03',
-    Value: 'Tom',
-    Unit: 'No. 189, Grove St, Los Angeles'
+    Name: 'C1-C13',
+    Value: 5.469,
+    Unit: 'fF'
   },
   {
-    Name: '2016-05-02',
-    Value: 'Tom',
-    Unit: 'No. 189, Grove St, Los Angeles'
+    Name: 'C2-C12',
+    Value: 6.985,
+    Unit: 'fF'
   },
   {
-    Name: '2016-05-04',
-    Value: 'Tom',
-    Unit: 'No. 189, Grove St, Los Angeles'
+    Name: 'C3-C11',
+    Value: 10.256,
+    Unit: 'fF'
   },
   {
-    Name: '2016-05-01',
-    Value: 'Tom',
-    Unit: 'No. 189, Grove St, Los Angeles'
+    Name: 'C4-C10',
+    Value: 58.62,
+    Unit: 'fF'
   },
   {
-    Name: '2016-05-04',
-    Value: 'Tom',
-    Unit: 'No. 189, Grove St, Los Angeles'
+    Name: 'C5-C8',
+    Value: 15.67,
+    Unit: 'fF'
   },
   {
-    Name: '2016-05-01',
-    Value: 'Tom',
-    Unit: 'No. 189, Grove St, Los Angeles'
+    Name: 'C6-C9',
+    Value: 3.33,
+    Unit: 'fF'
   },
   {
-    Name: '2016-05-04',
-    Value: 'Tom',
-    Unit: 'No. 189, Grove St, Los Angeles'
+    Name: 'C7',
+    Value: 7.79,
+    Unit: 'fF'
   },
   {
-    Name: '2016-05-01',
-    Value: 'Tom',
-    Unit: 'No. 189, Grove St, Los Angeles'
+    Name: 'l1-l9',
+    Value: 16.98,
+    Unit: 'nH'
+  },
+  {
+    Name: 'l2-l8',
+    Value: 7.732,
+    Unit: 'nH'
+  },
+  {
+    Name: 'l3-l7',
+    Value: 8.89,
+    Unit: 'nH'
+  },
+  {
+    Name: 'l4-l6',
+    Value: 9.63,
+    Unit: 'nH'
+  },
+  {
+    Name: 'l5',
+    Value: 4.53,
+    Unit: 'nH'
   }
 ]
+
+const tableData1 = [
+{
+    Name: '起始频率',
+    value: 1.5,
+    notes: 'GHz'
+  },
+  {
+    Name: '截止频率',
+    value: 3.5,
+    notes: 'GHz'
+  },
+  {
+    Name: '带宽',
+    value: 2,
+    notes: 'GHz'
+  },
+  {
+    Name: '通带增益',
+    value: -1,
+    notes: 'dB'
+  },
+  {
+    Name: '阻带抑制',
+    value: 0.5,
+    notes: 'dB'
+  },
+  {
+    Name: '群延迟',
+    value: -30,
+    notes: 'deg'
+  },
+  {
+    Name: '阻抗匹配',
+    value: 50,
+    notes: 'Ω（欧姆）'
+  },
+  {
+    Name: '拓扑结构',
+    value: 'layout',
+    notes: ''
+  }
+]
+
 </script>
 
 <style scoped>

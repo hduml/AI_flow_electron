@@ -63,7 +63,7 @@
 import { ref } from 'vue'
 import logo from '@renderer/assets/logo.png'
 
-const active = ref(1)
+const active = ref(0)
 const isNotMac = ref(true)
 const isUseSysTitle = ref(false)
 const max = ref(false)

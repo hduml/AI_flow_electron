@@ -1,15 +1,16 @@
 <template>
-  <div :style="{ height: 'calc(100% - 50px)' }" f-c-c bg-white>
-    <div class="w-20%" h-940px>
+  <div :style="{ height: 'calc(100% - 50px)' }" flex bg-white>
+  <!-- <div :style="{ height: 'calc(100% - 50px)' }" f-c-c bg-white> -->
+    <div class="w-20%">
       <el-tree :data="data" :props="defaultProps" @node-click="handleNodeClick" font-size-5 />
     </div>
     <el-divider
       direction="vertical"
-      class="m-0 h-940px"
+      class="m-0"
       border-width="3px"
       border-color="#eeeeee"
     ></el-divider>
-    <div class="w-60%" h-940px>
+    <div class="w-60%">
       <!-- <el-text class="mx-1 font-size-5 p-5">设计结果输出</el-text>
       <el-divider class="m-0" border-width="1px" border-color="#eeeeee"></el-divider>
       <div class="block text-center ml-10 mr-10">
@@ -95,11 +96,11 @@
     </div>
     <el-divider
       direction="vertical"
-      class="m-0 h-940px"
+      class="m-0"
       border-width="3px"
       border-color="#eeeeee"
     ></el-divider>
-    <div class="w-20%" h-940px>
+    <div class="w-20%">
       <el-table :data="tableData" border style="width: 100% high: 60%">
         <el-table-column prop="Name" label="Name" />
         <el-table-column prop="value" label="Value" />
@@ -109,7 +110,8 @@
       <div class="demo-image">
         <div v-for="fit in fits" :key="fit" class="block">
           <span class="demonstration w-auto">原理图结构</span>
-          <el-image style="width: 300px; height: 300px" :src="'image://' + PFPath" :fit="fit" />
+          <!-- <el-image style="width: 300px; height: 300px" :src="'image://' + PFPath" :fit="fit" /> -->
+          <img style="width: 300px; height: 300px" src="@renderer/assets/layout.png" />
         </div>
       </div>
     </div>
@@ -217,7 +219,7 @@ const value = ref('')
 
 const options = [
   {
-    value: 'LPF1',
+    value: 'layout',
     label: '低通滤波器拓扑结构1'
   },
   {
@@ -298,12 +300,12 @@ const tableData = [
   }
 ]
 
-const PFPath = computed(() => {
-  return `D:\\GitWork\\electron_work\\AI_flow_electron\\resources\\${value.value}.png`.replace(
-    /\\\\/g,
-    '/'
-  )
-})
+// const PFPath = computed(() => {
+//   return `D:\\GitWork\\electron_work\\AI_flow_electron\\resources\\${value.value}.png`.replace(
+//     /\\\\/g,
+//     '/'
+//   )
+// })
 </script>
 
 <style scoped>

@@ -11,22 +11,19 @@
       border-color="#eeeeee"
     ></el-divider>
     <div class="w-60%">
-      <span class="mt-5 ml-10 w-35 text-gray-600 inline-flex items-center font-size-5"
-        >功能单元:</span
+      <span class="mt-5 ml-5 w-35 text-black-600 inline-flex items-center font-size-6"
+        >新建工程:</span
       >
-      <el-divider m-0 border-width-1px border-color="#eeeeee"></el-divider>
+      <el-divider m-0 border-width-5px border-color="blue"></el-divider>
       <div flex align-start>
         <div f-c-c flex-col m-10 b-1>
-          <img src="@renderer/assets/device.png" alt="您的图片描述" style="width: auto; height: auto;"/>
-          <span p-1>PA</span>
+          <span p-1>设置项目名称：</span>
+          <div style="margin: 137px 0" />
         </div>
-        <div f-c-c flex-col m-10 b-1>
-          <img src="@renderer/assets/device.png" alt="您的图片描述" />
-          <span p-1>DA</span>
-        </div>
-        <div f-c-c flex-col m-10 b-1>
-          <img src="@renderer/assets/device.png" alt="您的图片描述" />
-          <span p-1>LNA</span>
+        <div f-c-c flex-col m-2 b-1>
+          <el-input v-model="input" placeholder="项目名称" style="width: 400px; margin-bottom: 20px;"/>
+          <el-input v-model="input" placeholder="备注" style="width: 400px; height: 200px; margin-bottom: 20px;"/>
+          <el-button>创建工程</el-button>
         </div>
         <!-- <div f-c-c flex-col m-10 b-1 b-solid>
           <el-image p-1></el-image>
@@ -34,46 +31,6 @@
         </div> -->
       </div>
 
-      <span class="mt-5 ml-10 w-35 text-gray-600 inline-flex items-center font-size-5"
-        >基本结构:</span
-      >
-      <el-divider class="m-0" border-width="1px" border-color="#eeeeee"></el-divider>
-      <div flex align-start>
-        <div f-c-c flex-col m-10 b-1>
-          <img src="@renderer/assets/dianzu.png" alt="电阻" />
-          <span p-1>电阻</span>
-        </div>
-        <div f-c-c flex-col m-10 b-1>
-          <img src="@renderer/assets/dianrong.png" alt="电容" />
-          <span p-1>电容</span>
-        </div>
-        <div f-c-c flex-col m-10 b-1>
-          <img src="@renderer/assets/diangan.png" alt="电感" />
-          <span p-1>电感</span>
-        </div>
-        <div f-c-c flex-col m-10 b-1>
-          <img src="@renderer/assets/chuanshuxian.png" alt="传输线" />
-          <span p-1>传输线</span>
-        </div>
-        <div f-c-c flex-col m-10 b-1>
-          <img src="@renderer/assets/filter.png" alt="滤波器" />
-          <span p-1>滤波器</span>
-        </div>
-      </div>
-      <div class="demo-input-suffix font-size-5"></div>
-      <span class="mt-5 ml-10 w-35 text-gray-600 inline-flex items-center font-size-5">其他:</span>
-      <el-divider class="m-0" border-width="1px" border-color="#eeeeee"></el-divider>
-      <el-row :gutter="1">
-        <div>
-          <div f-c-c flex-col m-10 b-1>
-            <!-- <el-icon :size="20">
-              <Edit />
-            </el-icon> -->
-            <img src="@renderer/assets/kuozhan.jpg" alt="扩展" style="width: 50px; height: 50px;" />
-            <span p-1>扩展</span>
-          </div>
-        </div>
-      </el-row>
       <div class="demo-input-suffix font-size-5"></div>
     </div>
     <el-divider
@@ -114,6 +71,7 @@ const input7 = ref('')
 const input8 = ref('')
 const input9 = ref('')
 const input10 = ref('')
+const input11 = ref('')
 
 const difinput = computed(() => {
   const num1 = parseInt(input1.value, 10)
@@ -409,6 +367,10 @@ const PFPath = computed(() => {
   justify-content: center;
   align-items: center;
 }
+
+// .custom-input {
+//   height: 50px;
+// }
 
 // .custom-button{
 //   position:relative;
